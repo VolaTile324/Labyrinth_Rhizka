@@ -5,8 +5,7 @@ using UnityEngine;
 public class SpeedRamp : MonoBehaviour
 {
     [SerializeField] float force;
-    [SerializeField] AudioClip sound;
-    [SerializeField] AudioManager audioManager;
+    [SerializeField] AudioSource speederSound;
     bool isSpeeding;
 
     private void OnCollisionEnter(Collision other)
@@ -26,7 +25,7 @@ public class SpeedRamp : MonoBehaviour
             // make the golf launched in the direction of the ramp
             golfRB.AddForce(this.transform.forward * force, ForceMode.Impulse);
             golfRB.velocity = this.transform.forward;
-            audioManager.PlaySFX(sound);
+            speederSound.Play();
             isSpeeding = true;
             Invoke("Reset", 0.3f);
         }

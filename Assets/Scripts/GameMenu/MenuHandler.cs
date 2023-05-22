@@ -10,10 +10,4 @@ public class MenuHandler : MonoBehaviour
         // load the level
         SceneManager.LoadScene(levelName);
     }
-
-    public void QuitGame()
-    {
-        // quit the game
-        Application.Quit();
-    }
 }

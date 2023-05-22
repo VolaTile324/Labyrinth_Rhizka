@@ -5,6 +5,7 @@ using UnityEngine;
 public class CamControl : MonoBehaviour
 {
     [SerializeField] Camera cam;
+    [SerializeField] GameObject ball;
     float frustumScale;
 
     private void Start()
@@ -18,7 +19,7 @@ public class CamControl : MonoBehaviour
     {
         var touches = Input.touches;
 
-        switch (touches.Length)
+        /* switch (touches.Length)
         {
             case 1:
                 Drag(touches);
@@ -26,14 +27,21 @@ public class CamControl : MonoBehaviour
             case 2:
                 Zoom(touches);
                 break;
+        } */
+
+        if (touches.Length == 2)
+        {
+            Zoom(touches);
         }
+
+        cam.transform.position = new Vector3(ball.transform.position.x, cam.transform.position.y, ball.transform.position.z);
     }
 
-    private void Drag(UnityEngine.Touch[] touches)
+    /* private void Drag(UnityEngine.Touch[] touches)
     {
         var touch = Input.GetTouch(0);
-        cam.transform.position += new Vector3(-touch.deltaPosition.x, 0, touch.deltaPosition.y) * 0.001f;
-    }
+        cam.transform.position -= new Vector3(touch.deltaPosition.x, 0, touch.deltaPosition.y) * frustumScale;
+    } */
 
     private void Zoom(UnityEngine.Touch[] touches)
     {

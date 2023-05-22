@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "Custom Event", menuName = "Custom Assets/Events/Custom Event Invoke")]
 
-public class CustomEvent : MonoBehaviour
+public class CustomEvent : ScriptableObject
 {
     public UnityEvent OnInvoked = new UnityEvent();
 }

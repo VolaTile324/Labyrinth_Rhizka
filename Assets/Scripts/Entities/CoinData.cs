@@ -6,6 +6,6 @@ using UnityEngine;
 
 public class CoinData : ScriptableObject
 {
-    public int value;
     public Material material;
+    public Material invisMaterial;
 }

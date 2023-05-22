@@ -5,25 +5,16 @@ using UnityEngine;
 public class MenuSounds : MonoBehaviour
 {
     // handle the sounds that plays in the main menu
-    [SerializeField] AudioManager audioManager;
-    [SerializeField] AudioClip bgmMenu;
-    [SerializeField] AudioClip clickSound;
-    [SerializeField] AudioClip testSound;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        // handle the background music
-        audioManager.PlayBGM(bgmMenu);
-    }
+    [SerializeField] AudioSource clickSound;
+    [SerializeField] AudioSource testSound;
 
     public void ClickSound()
     {
-        audioManager.PlaySFX(clickSound);
+        clickSound.Play();
     }
 
     public void TestSound()
     {
-        audioManager.PlaySFX(testSound);
+        testSound.Play();
     }
 }

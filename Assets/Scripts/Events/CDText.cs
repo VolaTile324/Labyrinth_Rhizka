@@ -9,6 +9,6 @@ public class CDText : MonoBehaviour
 
     public void UpdateText(int value)
     {
-        text.text = "Wait: " + value + "s";
+        text.text = value.ToString();
     }
 }
